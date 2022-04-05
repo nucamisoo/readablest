@@ -1,0 +1,12 @@
+{
+    "name": "Readablest",
+    "version": "0.1.0",
+    "manifest_version": 3,
+    "description": "Readablest Chrome Extension",
+    "content_scripts": [{
+        "matches": ["https://www.bbc.com/news"],
+        "js": [
+            "content.js"
+        ]
+    }]
+}
