@@ -1,1 +1,0 @@
-window.alert('You are on the BBC News');

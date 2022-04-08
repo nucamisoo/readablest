@@ -4,9 +4,9 @@
     "manifest_version": 3,
     "description": "Readablest Chrome Extension",
     "content_scripts": [{
-        "matches": ["https://www.bbc.com/news"],
+        "matches": ["https://www.google.com/"],
         "js": [
-            "content.js"
+            "background.js"
         ]
     }]
 }
