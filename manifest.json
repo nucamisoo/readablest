@@ -6,6 +6,13 @@
     "permissions": [
         "tabs"
     ],
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
     "background": {
         "service_worker": "background.js"
     },
