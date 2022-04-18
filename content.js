@@ -18,6 +18,15 @@ chrome.runtime.onMessage.addListener(
                 const uttr = new SpeechSynthesisUtterance(z.textContent);
                 uttr.lang = "en-US"
                 speechSynthesis.speak(uttr);
+
+                // send a messaage to the background.js
+                chrome.runtime.sendMessage({
+                    msg: "This is a message from content.js",
+                    endpoint: request.endpoint,
+                    text: z.textContent,
+                }, function(response) {
+                    alert('EN:' + z.textContent + 'JP:' + response.translatedText);
+                });
             });
 
         } else {
