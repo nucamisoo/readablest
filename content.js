@@ -25,7 +25,14 @@ chrome.runtime.onMessage.addListener(
                     endpoint: request.endpoint,
                     text: z.textContent,
                 }, function(response) {
-                    alert('EN:' + z.textContent + 'JP:' + response.translatedText);
+                    // Thanks to: [CSS Tooltip](https://www.w3schools.com/css/css_tooltip.asp)
+                    // Thanks to: [【JavaScript入門】要素を追加する方法のまとめ](https://kita-note.com/js-summary-of-how-to-add-elements)
+                    z.classList.add("tooltip");
+                    var newElement = document.createElement("span");
+                    var newContent = document.createTextNode(response.translatedText);
+                    newElement.appendChild(newContent);
+                    newElement.classList.add("tooltiptext");
+                    z.insertBefore(newElement, z.firstChild);
                 });
             });
 
