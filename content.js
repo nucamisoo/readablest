@@ -35,9 +35,10 @@ chrome.runtime.onMessage.addListener(
                     z.insertBefore(newElement, z.firstChild);
                 });
             });
-
+        } else if (request.msg === "OFF") {
+            speechSynthesis.cancel();
         } else {
-            alert("Something went wrong.");
+            alert("Something went wrong, msg: " + request.msg);
         }
     }
 );
